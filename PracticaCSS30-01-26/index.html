@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refugio Animal Sa Pobla</title>
+  <meta name="description" content="Adopción y ayuda al refugio. Landing para practicar CSS." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+
+<body>
+  <!-- =========================
+       ZONA 1: HEADER (flex) + POPOVER
+       ========================= -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#inicio" aria-label="Ir a inicio">
+        <span class="logo-mark" aria-hidden="true">🐾</span>
+        <span class="logo-text">Refugio Sa Pobla</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav-link" href="#adopcion">Adopción</a>
+        <a class="nav-link" href="#normas">Normas</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="btn btn-ghost"
+                popovertarget="ayuda"
+                popovertargetaction="toggle"
+                type="button">
+          Ayuda
+        </button>
+        <a class="btn btn-primary" href="#contacto">Quiero ayudar</a>
+      </div>
+
+      <div id="ayuda" class="popover" popover="auto">
+        <h3 class="popover-title">Checklist rápido</h3>
+        <ul class="popover-list">
+          <li>Variables en :root</li>
+          <li>Header con flex</li>
+          <li>Hero responsive</li>
+          <li>Tarjetas en grid</li>
+          <li>Badge con position</li>
+          <li>Hover + transición</li>
+          <li>1 animación</li>
+          <li>Overflow en normas</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- =========================
+         ZONA 2: HERO (1 columna -> 2 columnas >=768px)
+         ========================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="chip" data-status="urgente">Urgente</p>
+
+          <h1 class="hero-title">Adopta, acoge o ayuda con una donación</h1>
+
+          <p class="hero-subtitle">
+            Cada semana llegan nuevos animales. Tu apoyo sostiene alimentación, veterinario y cuidados diarios.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#adopcion">Ver animales</a>
+            <a class="btn btn-soft" href="#contacto">Contactar</a>
+          </div>
+
+          <ul class="hero-highlights">
+            <li class="highlight"><span aria-hidden="true">✓</span> Adopción responsable</li>
+            <li class="highlight"><span aria-hidden="true">✓</span> Acogidas temporales</li>
+            <li class="highlight"><span aria-hidden="true">✓</span> Voluntariado flexible</li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <div class="media-box">
+            <p class="media-caption">Bloque visual (sin imágenes)</p>
+            <div class="media-badges">
+              <span class="mini-badge">Esterilización</span>
+              <span class="mini-badge">Vacunación</span>
+              <span class="mini-badge">Socialización</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ZONA 3: TARJETAS (grid + badge absolute)
+         ========================= -->
+    <section id="adopcion" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">En adopción</h2>
+          <p class="section-lead">Tres fichas: especie, edad y un enlace.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card" data-tier="prioridad">
+            <span class="badge">Nuevo</span>
+            <p class="card-icon" aria-hidden="true">🐶</p>
+            <h3 class="card-title">Bruna</h3>
+            <p class="card-meta">Perra · 2 años · Mediana</p>
+            <p class="card-text">Sociable y tranquila. Ideal para paseos y rutina estable.</p>
+            <a class="card-link" href="#contacto">Me interesa</a>
+          </article>
+
+          <article class="card" data-tier="base">
+            <span class="badge">Joven</span>
+            <p class="card-icon" aria-hidden="true">🐱</p>
+            <h3 class="card-title">Núvol</h3>
+            <p class="card-meta">Gato · 1 año · Pequeño</p>
+            <p class="card-text">Curioso y cariñoso. Se adapta bien a piso.</p>
+            <a class="card-link" href="#contacto">Me interesa</a>
+          </article>
+
+          <article class="card" data-tier="especial">
+            <span class="badge">Senior</span>
+            <p class="card-icon" aria-hidden="true">🐾</p>
+            <h3 class="card-title">Luna</h3>
+            <p class="card-meta">Perra · 9 años · Pequeña</p>
+            <p class="card-text">Mayor y muy noble. Necesita un hogar calmado.</p>
+            <a class="card-link" href="#contacto">Me interesa</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ZONA 4: OVERFLOW + FOOTER
+         (Normas con scroll + CTA contacto)
+         ========================= -->
+    <section id="normas" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Normas de visita</h2>
+          <p class="section-lead">Esta caja debe mostrar scroll si el texto no cabe.</p>
+        </header>
+
+        <div class="rules">
+          <h3 class="rules-title">Antes de venir</h3>
+          <div class="rules-box">
+            <p>— Se atiende con cita previa para garantizar el bienestar de los animales.</p>
+            <p>— Mantén un tono calmado y respeta las indicaciones del equipo.</p>
+            <p>— No se permite alimentar sin autorización.</p>
+            <p>— Respeta las zonas restringidas y la señalización.</p>
+            <p>— Algunas áreas pueden estar cerradas por cuarentena o limpieza.</p>
+            <p>— Si vienes con otro perro, avisa antes para organizar la entrada.</p>
+            <p>— Gracias por tu colaboración 💛</p>
+            <p>— Texto extra para provocar overflow y que aparezca scroll.</p>
+            <p>— Más texto…</p>
+            <p>— Más texto…</p>
+          </div>
+        </div>
+
+        <div id="contacto" class="contact-row">
+          <div class="contact-text">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-lead">Escríbenos para adopción, acogida o donación.</p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="#">Enviar mensaje</a>
+            <a class="btn btn-ghost" href="#inicio">Volver arriba</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p class="footer-copy">© Refugio Animal Sa Pobla</p>
+      <div class="footer-links" aria-label="Enlaces">
+        <a class="footer-link" href="#">Privacidad</a>
+        <a class="footer-link" href="#">Cómo ayudar</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

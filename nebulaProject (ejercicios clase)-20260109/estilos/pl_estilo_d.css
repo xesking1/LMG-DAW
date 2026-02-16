@@ -1,0 +1,56 @@
+/* =========================
+   CHULETA: CONCEPTOS QUE SE TRABAJAN
+   - Color y fondo
+   - Modelo de caja (margen, relleno, borde)
+   - Tipografía (tamaño y énfasis)
+   - Colocación en una fila (logo izquierda, menú derecha)
+   - Estados visuales al interactuar (al pasar el ratón)
+   - Adaptación a pantallas pequeñas
+   - Mantener la cabecera visible al hacer scroll
+   ========================= */
+
+/* =========================
+   AJUSTES INICIALES
+   - Evita espacios por defecto en los elementos.
+   - Haz que las dimensiones calculadas sean más predecibles al sumar 
+        relleno y borde.
+   ========================= */
+
+
+/* CABECERA (ESTILO CLÁSICO)
+   - Fondo claro y línea inferior para separar la cabecera del contenido.
+   - Debe mantenerse visible en la parte superior cuando se hace scroll.
+*/
+
+
+/* CONTENEDOR DE LA CABECERA
+   - Limita el ancho en pantallas grandes y céntralo.
+   - Añade aire arriba y abajo.
+   - Coloca el logo a la izquierda y el menú a la derecha en la misma fila.
+   - Alinea verticalmente logo y menú.
+*/
+
+
+/* LOGO
+   - Enlace sin subrayado.
+   - Color oscuro para contraste sobre fondo blanco.
+   - Icono y texto en la misma línea con separación.
+   - El texto del logo debe verse más marcado que un texto normal.
+*/
+
+
+/* MENÚ (CLÁSICO)
+   - La lista no debe mostrar viñetas.
+   - Las opciones se muestran en horizontal con separación regular.
+   - Los enlaces deben verse “clásicos”: texto oscuro, sin subrayado.
+   - Cada enlace debe tener una pequeña separación interior.
+   - Añade una línea inferior siempre visible en cada opción para dar aspecto tradicional
+     (debe ocupar espacio desde el inicio para que el alto no cambie).
+*/
+
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS (menos de 600px)
+   - En pantallas estrechas, apila los bloques (logo arriba, menú debajo).
+   - El menú pasa a columna para que se lea mejor.
+*/
+

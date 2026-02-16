@@ -1,0 +1,103 @@
+/* =========================
+   MAIN (ZONA DE CONTENIDO)
+   - Fondo suave para diferenciar el contenido principal de la cabecera.
+   ========================= */
+
+
+/* =========================
+   CONTENEDOR DEL MAIN
+   - Reutiliza el ancho máximo de la cabecera.
+   - Centra el contenido y deja aire lateral con porcentaje.
+   ========================= */
+
+
+/* =========================
+   HERO (INICIO) - ESTILO REVISTA
+   - En esta versión, el hero se centra (no va en dos columnas).
+   - El texto debe quedar bien alineado y con espacio vertical.
+   ========================= */
+
+
+/* =========================
+   TÍTULO Y TEXTO DEL HERO
+   - Título grande y claro.
+   - Texto con buen interlineado y sin líneas muy largas.
+   ========================= */
+
+
+/* =========================
+   PALABRA DESTACADA
+   - Resalta una parte del título con un tono sobrio.
+   ========================= */
+
+
+/* =========================
+   CAJA DEL HERO (NOTA)
+   - En esta versión, la caja va debajo del texto (centrada).
+   - Debe parecer una tarjeta informativa.
+   ========================= */
+
+
+/* =========================
+   ACCIONES (BOTONES)
+   - Botones centrados, en fila, con salto de línea si no caben.
+   ========================= */
+
+/* =========================
+   SECCIONES (SERVICIOS / PROYECTOS)
+   - Separación vertical uniforme entre secciones.
+   ========================= */
+
+
+/* =========================
+   TÍTULO DE SECCIÓN (ICONO + TEXTO)
+   - Alinea icono y texto en una línea.
+   ========================= */
+
+
+/* =========================
+   TARJETAS (SERVICIOS)
+   - Fila con salto de línea.
+   - Tarjeta clásica: fondo blanco + borde.
+   ========================= */
+
+
+/* =========================
+   ETIQUETA "NEW"
+   - En la esquina superior derecha de la tarjeta.
+   ========================= */
+
+
+/* =========================
+   PROYECTOS (DOS COLUMNAS) - ESTILO REVISTA
+   - Columna principal + aside.
+   - El aside se mantiene visible al hacer scroll (dentro de la sección).
+   ========================= */
+
+
+/* =========================
+   POSTS (ARTÍCULOS)
+   - Bloques independientes, separados.
+   ========================= */
+
+
+/* =========================
+   NOTA (OVERFLOW)
+   - Alto máximo para forzar desbordamiento.
+   - Scroll automático cuando el contenido no cabe.
+   ========================= */
+
+
+/* =========================
+   TARJETAS DEL ASIDE
+   - Bloques apilados.
+   - Lista sin viñetas.
+   ========================= */
+
+   
+/* =========================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS (menos de 600px)
+   - Proyectos pasa a una columna.
+   - El aside deja de ser sticky (para que no “rompa” el scroll).
+   ========================= */
+

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Ficticia - Selectores Avanzados</title>
+  <link rel="stylesheet" href="estilos/pl_tienda_grid.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Tienda Ficticia</h1>
+    <nav>
+      <ul>
+        <li><a href="#productos" class="nav-link">Productos</a></li>
+        <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="productos">
+      <h2>Productos</h2>
+      <ul>
+        <li data-category="ropa">Camiseta</li>
+        <li data-category="ropa">Pantalones</li>
+        <li data-category="tecnologia">Teléfono</li>
+        <li data-category="tecnologia">Auriculares</li>
+      </ul>
+    </section>
+
+    <section id="ofertas">
+      <h2>Ofertas</h2>
+      <p>Consulta nuestras ofertas exclusivas:</p>
+      <p class="extra-info">* Aplican términos y condiciones.</p>
+      <ul>
+        <li>20% de descuento en <a href="productos.html">productos seleccionados</a>.</li>
+        <li>Envío gratis en compras mayores a <strong>$50</strong>.</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form action="#" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tienda Ficticia</p>
+  </footer>
+</body>
+
+</html>

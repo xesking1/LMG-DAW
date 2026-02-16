@@ -1,0 +1,39 @@
+
+:root {
+    --fondo-principal: #F4F5F7;
+    --superficie: #FFFFFF;
+    --texto-principal: #1F2933;
+    --texto-secundario: #6B7280;
+    --color-acento: #3B82F6;
+}
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    !
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--texto-secundario);
+    padding: 3rem 0;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .header-row {
+        background-color: #3B82F6;
+    }
+}
+
+.card :hover {
+    background-color: #1F2933;
+
+    transition-duration: 0.8s;
+}

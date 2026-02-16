@@ -1,0 +1,145 @@
+/* =========================================================
+   TEMA B - TIENDA (REFactor a VARIABLES)
+   Instrucciones:
+   1) NO toques el HTML.
+   2) Este CSS funciona, pero está "hardcodeado".
+   3) Tu trabajo es crear variables CSS en :root y sustituir
+      los valores repetidos por var(--...).
+   4) Crea al menos:
+      - 7 variables de color
+      - 3 de espaciado
+      - 3 de tipografía (tamaño base, tamaño títulos)
+      - 2 de bordes (radio, grosor)
+      - 1 de sombra
+   ========================================================= */
+
+/* (A) Define aquí tus variables */
+:root {
+  /* Colores */
+  --c-bg: #f8fafc;
+  --c-text: #1f2937;
+  --c-muted: #475569;
+  --c-accent: #2563eb;
+  --c-accent-2: #7c3aed;
+  --c-border: #e5e7eb;
+  --c-surface: #ffffff; 
+
+  /* Tipografía */
+  --fs-base: 16px;
+  --fs-h1: 1.8rem;
+  --fs-h2: 1.2rem; 
+
+  /* Espaciado */
+  --pd-y: 0.55rem;
+  --pd-x: 0.6rem;
+  --sp-1: 1rem;
+
+  /* Bordes y sombras */
+  --radius: 0.75rem;
+  --border-w: 1px;
+  --shadow: 0 8px 18px;
+}
+
+/* (B) Estilos del tema (AHORA MISMO sin variables) */
+body {
+  font-family: system-ui, Arial, sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--c-text);
+  background: var(--c-bg);
+}
+
+header {
+  background: #0f172a;
+  color: var(--c-surface);
+  padding: 1.25rem 1.25rem;
+  box-shadow: var(--shadow) rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+  margin: 0 0 0.75rem 0;
+  font-size: var(--fs-h1);
+  letter-spacing: 0.02em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--c-surface);
+  text-decoration: none;
+  padding: 0.35rem var(--pd-x);
+  border: var(--border-w) solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+main {
+  padding: 1.25rem;
+}
+
+section {
+  background: var(--c-surface);
+  border: var(--border-w) solid var(--c-border);
+  border-radius: var(--radius);
+  padding: var(--sp-1) var(--sp-1);
+  margin-bottom: var(--sp-1);
+  box-shadow: var(--shadow) rgba(15, 23, 42, 0.06);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: var(--fs-h2);
+}
+
+#productos li[data-category="ropa"] { color: var(--c-accent); }
+#productos li[data-category="tecnologia"] { color: var(--c-accent-2); }
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--pd-y) var(--pd-x);
+  border: var(--border-w) solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: var(--c-surface);
+}
+
+button {
+  margin-top: 0.75rem;
+  padding: var(--pd-y) 0.9rem;
+  border: 0;
+  border-radius: 0.6rem;
+  background: #22c55e;
+  color: #0b1220;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+footer {
+  padding: var(--sp-1) 1.25rem;
+  color: var(--c-muted);
+  text-align: center;
+}
+
+/* (C) Tu objetivo:
+   - Sustituye todos los colores, espaciados, radios, tamaños y sombras
+     por variables.
+   - BONUS: crea una variante “alta” y “baja” de espaciado:
+     --sp-2: 0.75rem; y luego prueba a cambiarla a 1.25rem
+     para ver cómo cambia toda la web.
+*/

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicios position</title>
+  <link rel="stylesheet" href="estilos/estilo_base.css" />
+  <link rel="stylesheet" href="estilos/pl_position.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <h1>Ejercicios CSS: position con cajas</h1>
+    <p class="intro">
+      Completa los ejercicios editando SOLO <code>position.css</code>.
+      Para ello, haz una copia de <code>pl_position.css</code> cambiando el nombre a <code>position.css</code>. 
+      No modifiques el HTML.
+    </p>
+
+    <!-- =========================
+         EJ1 — relative (mover sin perder hueco)
+         ========================= -->
+    <section class="panel">
+      <h2>EJ1 — position: relative</h2>
+      <p class="note">EJ1 — ENUNCIADO</p>
+<ul class="enunciado">
+  <li>Mueve la Caja A 20px hacia abajo y 30px a la derecha usando position: relative.</li>
+  <li>Debe seguir ocupando su hueco original en la fila (no sale del flujo).</li>
+  <li>Selector: .ej1-a</li>
+</ul>
+
+      <div class="fila">
+        <div class="caja ej1-a">Caja A</div>
+        <div class="caja">Caja B</div>
+        <div class="caja">Caja C</div>
+      </div>
+    </section>
+
+    <!-- =========================
+         EJ2 + EJ3 — absolute con/sin marco
+         ========================= -->
+    <section class="panel">
+      <h2>EJ2 y EJ3 — position: absolute y el marco</h2>
+      <p class="note">EJ2 — ENUNCIADO</p>
+<ul class="enunciado">
+  <li>Coloca la etiqueta NEW en la esquina superior derecha DENTRO de la tarjeta.</li>
+  <li>Debe quedar a 10px del borde superior y a 10px del borde derecho.</li>
+  <li>La etiqueta debe posicionarse respecto a la tarjeta (la tarjeta es el marco).</li>
+  <li>Selectores: .tarjeta-con-marco (marco) y .ej2-tag (etiqueta)</li>
+</ul>
+<p class="note">EJ3 — ENUNCIADO</p>
+<ul class="enunciado">
+  <li>En la tarjeta “sin marco” la etiqueta puede colocarse mal.</li>
+  <li>Arregla el problema con UNA sola línea en el contenedor para crear el marco.</li>
+  <li>Luego coloca la etiqueta igual que en EJ2 (top/right a 10px).</li>
+  <li>Selectores: .tarjeta-sin-marco (1 línea) y .ej3-tag (etiqueta)</li>
+</ul>
+
+      <div class="grid-2">
+        <article class="tarjeta tarjeta-con-marco">
+          <span class="etiqueta ej2-tag">NEW</span>
+          <h3>Tarjeta (con marco)</h3>
+          <p>La etiqueta debe quedar arriba a la derecha dentro de esta tarjeta.</p>
+        </article>
+
+        <article class="tarjeta tarjeta-sin-marco">
+          <span class="etiqueta ej3-tag">NEW</span>
+          <h3>Tarjeta (sin marco)</h3>
+          <p>Primero observa el error. Luego corrígelo con 1 línea en el contenedor.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+         EJ4 — fixed (botón flotante)
+         ========================= -->
+    <section class="panel">
+      <h2>EJ4 — position: fixed</h2>
+      <p class="note">EJ4 — ENUNCIADO</p>
+<ul class="enunciado">
+  <li>Haz que el botón flotante se quede SIEMPRE visible al hacer scroll.</li>
+  <li>Debe estar en la esquina inferior derecha del viewport.</li>
+  <li>Separación: 16px del borde inferior y 16px del borde derecho.</li>
+  <li>Selector: .boton-flotante</li>
+</ul>
+
+      <div class="relleno">
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+        <p>(Relleno para poder hacer scroll)</p>
+      </div>
+
+      <button class="boton-flotante">+</button>
+    </section>
+
+    <!-- =========================
+         EJ5 — sticky dentro de scrollbox
+         ========================= -->
+    <section class="panel">
+      <h2>EJ5 — position: sticky</h2>
+      <p class="note">EJ5 — ENUNCIADO</p>
+<ul class="enunciado">
+  <li>Dentro del contenedor con scroll (.scrollbox), la cabecera debe quedarse pegada arriba.</li>
+  <li>Debe funcionar al hacer scroll dentro del contenedor, no respecto al viewport.</li>
+  <li>Pista: sticky necesita top.</li>
+  <li>Selector: .cabecera-scroll</li>
+</ul>
+
+      <div class="scrollbox">
+        <div class="cabecera-scroll">CABECERA</div>
+        <div class="contenido-scroll">
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+          <p>Scroll dentro de este contenedor…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         EJ6 — z-index (quién encima)
+         ========================= -->
+    <section class="panel">
+      <h2>EJ6 — z-index</h2>
+      <p class="note">EJ6 — ENUNCIADO</p>
+<ul class="enunciado">
+  <li>En el área de solape, haz que la etiqueta quede por ENCIMA de la caja.</li>
+  <li>Solo usa lo mínimo necesario: position + z-index (y coordenadas para forzar el solape).</li>
+  <li>Nota: z-index solo tiene efecto en elementos posicionados (no static).</li>
+  <li>Selectores: .ej6-caja y .ej6-etiqueta</li>
+</ul>
+
+      <div class="stage-solape">
+        <div class="caja grande ej6-caja">CAJA</div>
+        <div class="etiqueta ej6-etiqueta">ETIQUETA</div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

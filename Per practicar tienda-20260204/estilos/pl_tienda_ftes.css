@@ -1,0 +1,178 @@
+/* =========================================================
+   PLANTILLA — FUENTES (ADAPTADA A LO DADO EN CLASE)
+   Archivo: pl_tienda_ftes_ALUMNOS_adaptada.css
+
+   Según vuestros apuntes, aquí solo trabajamos:
+   - font-family
+   - font-size (px, rem, em, %)
+   - font-weight
+   - font-style
+   - line-height
+   - letter-spacing
+   - text-transform
+   - (Opcional) @font-face si el/la profe lo indica
+
+   INSTRUCCIONES (alumnado)
+   - NO modificar el HTML.
+   - NO modificar layout/colores (bloque C).
+   - Tu trabajo está SOLO en el bloque (B) “TIPOGRAFÍA A EDITAR”.
+
+   OBJETIVO
+   1) Elegir 2 familias: una para texto y otra para títulos.
+   2) Ajustar tamaños y jerarquía (H1 > H2 > texto > pequeños).
+   3) Ajustar legibilidad (line-height y letter-spacing).
+   4) Usar text-transform en el menú (si procede).
+   ========================================================= */
+
+/* =========================================================
+   (A) TEMA (YA RESUELTO) — NO TOCAR
+   ========================================================= */
+:root{
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.12);
+  --head: #0b1220;
+  --headText: #f8fafc;
+  --radius: 0.9rem;
+  --shadow: 0 10px 20px rgba(2, 6, 23, 0.08);
+  --sp-3: 1rem;
+  --sp-4: 1.25rem;
+}
+
+/* =========================================================
+   (B) TIPOGRAFÍA A EDITAR (AQUÍ TRABAJA EL ALUMNADO)
+   ========================================================= */
+
+/* Opción 1 (recomendada): Google Fonts (NO hay que descargar nada) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap');
+
+/* Opción 2 (opcional): @font-face con WOFF/WOFF2 (solo si el/la profe lo pide)
+@font-face {
+  font-family: "MiFuenteLocal";
+  src: url("./fonts/miFuente.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+/* ✅ RELLENA ESTAS VARIABLES (solo tipografía) */
+:root{
+  /* Familias */
+  /* --ff-text: ; */
+  /* --ff-title: ; */
+
+  /* Tamaños (elige unidades coherentes: rem recomendado) */
+  /* --fs-base: ; */
+  /* --fs-h1: ; */
+  /* --fs-h2: ; */
+  /* --fs-nav: ; */
+  /* --fs-small: ; */
+
+  /* Peso y estilo */
+  /* --fw-text: ; */     /* ej: 400 */
+  /* --fw-title: ; */    /* ej: 700 */
+  /* --fs-style: ; */    /* normal | italic */
+
+  /* Legibilidad */
+  /* --lh-base: ; */     /* ej: 1.6 */
+  /* --ls-base: ; */     /* ej: 0.01em */
+  /* --ls-nav: ; */      /* ej: 0.08em */
+
+  /* Transform (para el menú) */
+  /* --tt-nav: ; */      /* none | uppercase | lowercase | capitalize */
+}
+
+/* =========================================================
+   (C) ESTILOS (YA RESUELTO) — NO TOCAR
+   Incluye variables bien usadas y algunos selectores avanzados,
+   pero NO es parte del ejercicio de tipografía.
+   ========================================================= */
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: var(--ff-text, system-ui, Arial, sans-serif);
+  font-size: var(--fs-base, 16px);
+  font-weight: var(--fw-text, 400);
+  font-style: var(--fs-style, normal);
+  line-height: var(--lh-base, 1.6);
+  letter-spacing: var(--ls-base, 0.01em);
+  background: var(--bg);
+  color: var(--text);
+}
+
+header{
+  padding: var(--sp-4);
+  background: var(--head);
+  color: var(--headText);
+}
+
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0 0;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+nav a{
+  color: var(--headText);
+  text-decoration: none;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 250, 252, 0.22);
+  font-size: var(--fs-nav, 0.95rem);
+  letter-spacing: var(--ls-nav, 0.08em);
+  text-transform: var(--tt-nav, uppercase);
+}
+
+nav a:hover{
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+main{
+  padding: var(--sp-4);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--sp-3);
+  margin: 1rem 0;
+}
+
+h1, h2{
+  font-family: var(--ff-title, serif);
+  font-weight: var(--fw-title, 700);
+}
+
+h1{
+  font-size: var(--fs-h1, 2rem);
+  margin: 0;
+}
+
+h2{
+  font-size: var(--fs-h2, 1.35rem);
+  margin-top: 0;
+}
+
+#ofertas p{
+  font-size: var(--fs-small, 0.92rem);
+  color: var(--muted);
+}
+
+footer{
+  padding: var(--sp-3) var(--sp-4);
+  text-align: center;
+  color: var(--muted);
+  font-size: var(--fs-small, 0.92rem);
+}

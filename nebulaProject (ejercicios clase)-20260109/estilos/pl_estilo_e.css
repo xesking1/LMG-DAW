@@ -1,0 +1,433 @@
+/* CONCEPTOS A TRABAJAR:
+    - Propiedades del CSS:
+        - Herencia
+        - Cascada
+        - Especificidad
+    - Propiedades trabajadas:
+        - font-family
+        - font-size
+        - font-weight
+        - color
+        - border
+        - background-color
+        - padding
+        - margin
+        - box-sizing
+        - max-width
+        - position / top
+        - list-style
+        - flexbox
+        Extra:
+        - line - height
+        - unidad de medida: ch
+        - flex-wrap
+        - border-radius
+*/
+
+/* =========================
+   MAIN
+   - Separa visualmente el contenido del fondo general. Añade un color de 
+      fondo que permita separar el contenido de la página de la cabecera 
+      y el pie de página.
+   ========================= */
+   main {
+      background-color: #93A8AC;
+   }
+
+   
+
+
+/* =========================
+   CONTENEDOR DEL MAIN
+   - Asegura una lectura cómoda limitando el ancho y añadiendo 
+      margen/padding.
+   - Centra el contenido horizontalmente.
+   ========================= */
+   main .contenedor{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.6rem;
+   }
+   
+/* =========================
+   HERO (INICIO)
+   - Primera sección: debe destacar con más espacio vertical.
+   - Coloca el bloque de texto y la caja informativa en la misma fila.
+   - Alinea ambos elementos para que no queden descompensados:
+        - cada elemento a un extremo del contenedor (en la horizontal)
+   ========================= */
+   .hero{
+      padding: 0.5rem;
+   }
+
+   .hero .contenedor{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      
+   }
+
+   .hero-texto {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+   }
+
+   
+/* =========================
+   TÍTULO Y TEXTO DEL HERO
+   - Título grande y con buena lectura (altura de línea).
+   - El texto no debe tener líneas demasiado largas. El párrafo no debe
+      superar 60 carácteres por línea
+   ========================= */
+   h1{
+      font-size: 3rem;
+      line-height: 3rem;
+   }
+   .descripcion{
+      max-width: 60ch;
+   }
+
+/* =========================
+   PALABRA DESTACADA
+   - Resalta el texto con clase hightlight
+   ========================= */
+   .highlight{
+      color:red;
+   }
+/* =========================
+   ACCIONES (ENLACES CON ASPECTO DE BOTÓN)
+   - Los botones deben ir en la misma fila y con separación. Si no caben
+      deben pasar a la fila de debajo.
+   - El área clicable debe ser cómoda.
+   ========================= */
+
+   .hero-texto .acciones{
+      display:flex;
+      gap:1.5rem;
+   }
+   .hero-texto .acciones .btn{
+      border: 2px solid rgb(46, 46, 46);
+      border-radius: 30px;
+      padding: 0.8rem 0.8rem;
+      text-decoration:none;
+   }
+/* =========================
+   BOTÓN PRINCIPAL
+   - Fondo oscuro y texto claro.
+   ========================= */
+   .btn-primario{
+      background-color: rgb(78, 78, 78);
+      color: #bababa;
+   }
+   
+
+/* =========================
+   BOTÓN SECUNDARIO
+   - Fondo claro con borde visible.
+   ========================= */
+
+.btn-secundario{
+   background-color: rgb(207, 207, 207);
+   color: black;
+}
+
+/* =========================
+   CAJA DEL HERO
+   - Debe parecer una “tarjeta” independiente.
+   - Centra el contenido dentro de la caja.
+   - Limita el ancho para que no se haga gigante.
+   ========================= */
+
+.hero-caja {
+   border: 1px solid red;
+   border-radius: 12px;
+   background-color: #575757;
+   color: #d5d5d5;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.7rem;
+
+   max-width: 60ch;
+   padding: 1rem;
+}
+
+/* =========================
+   SECCIONES (SERVICIOS / PROYECTOS)
+   - Separa cada bloque del siguiente con padding vertical.
+   ========================= */
+
+.section {
+   padding: 0.5rem 0;
+}
+
+/* =========================
+   TÍTULO DE SECCIÓN (ICONO + TEXTO)
+   - Icono y texto deben ir alineados en la misma línea.
+   - Mantén el título visible y coherente en todas las secciones.
+   ========================= */
+
+.section-titulo {
+   font-size: 2rem;
+   display: flex;
+   align-items: center;
+   margin-bottom: 0.8rem;
+}
+
+/* =========================
+   TARJETAS (SERVICIOS)
+   - Coloca las tarjetas en fila cuando haya espacio.
+   - Si no cabe, deben bajar a la siguiente línea.
+   - Todas deben tener el mismo “aspecto de tarjeta”.
+   ========================= */
+
+   .div-tarjetas {
+      display: flex;
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+      gap: 1rem; /* para pantallas pequeñas */
+
+      border: 1px solid red;
+   }
+
+/* =========================
+   TARJETA (BASE)
+   - Aspecto de tarjeta: fondo, borde suave, esquinas redondeadas y padding.
+   - Debe poder crecer y bajar de línea si no cabe.
+   - Permite colocar una etiqueta en una esquina dentro de la tarjeta.
+   ========================= */
+
+   .tarjeta {
+      background-color: rgb(207, 207, 207);
+      border: 1px solid #66635B;
+      border-radius: 10px;
+      padding: 1rem;
+      max-width: 40ch;
+
+      position: relative;
+   }
+
+/* =========================
+   ICONO DE TARJETA
+   - Debe destacar sin ser demasiado grande.
+   ========================= */
+
+.card-icono {
+   font-size: 1.5rem;
+}
+
+/* =========================
+   TEXTO DENTRO DE TARJETA
+   - Título con margen inferior.
+   - Párrafo con buena legibilidad.
+   ========================= */
+
+.tarjeta h3 {
+   font-size: 1.5rem;
+}
+
+.tarjeta p {
+   line-height: 1rem;
+}
+
+/* =========================
+   ETIQUETA "NEW"
+   - Debe aparecer en una esquina dentro de la tarjeta.
+   - Debe ser pequeña pero visible.
+   ========================= */
+
+.nuevo {
+   position: absolute;
+   top: 0.5rem;
+   right: 0.5rem;
+
+   font-size: 0.75rem;
+   font-weight: 700;
+}
+
+/* =========================
+   PROYECTOS (DOS COLUMNAS)
+   - Contenido principal a la izquierda y columna lateral a la derecha.
+   - La columna principal debe ocupar más espacio.
+   ========================= */
+
+#proyectos {
+   border: 1px solid saddlebrown;
+}
+
+#proyectos .contenedor {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+   border: 1px solid red;
+}
+
+#proyectos .contenedor > * {
+   border: 1px solid salmon;
+}
+
+.main-col {
+   max-width: 80%;
+}
+
+.aside-col {
+   padding: 1rem;
+}
+/* =========================
+   POSTS (ARTÍCULOS)
+   - Cada artículo debe parecer un bloque independiente.
+   - Añade separación entre artículos.
+   ========================= */
+
+.post {
+   background-color: rgb(207, 207, 207);
+   border: 1px solid #66635B;
+   border-radius: 10px;
+
+   margin-bottom: 1rem;
+   padding: 1rem;
+}
+
+/* =========================
+   TÍTULO Y TEXTO DEL POST
+   ========================= */
+
+.post p {
+   line-height: 1.5;
+}
+
+/* =========================
+   ENLACE DEL POST
+   - Debe destacar como “acción”.
+   ========================= */
+
+.post a {
+   text-decoration: none;
+   color: #D45113;
+   font-weight: 700;
+}
+
+/* =========================
+   TARJETAS DEL ASIDE
+   - Bloques apilados con separación.
+   - Mantén un diseño consistente con el resto de tarjetas.
+   ========================= */
+
+.aside-col {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+.aside-tarjeta {
+   background-color: rgb(207, 207, 207);
+   border: 1px solid #66635B;
+   border-radius: 10px;
+
+   padding: 1rem;
+}
+
+/* =========================
+   TÍTULO DEL ASIDE
+   ========================= */
+
+.aside-titulo {
+   font-weight: 700;
+   margin-bottom: 0.8rem;
+}
+
+/* =========================
+   LISTA DE RECURSOS
+   - Sin viñetas.
+   - Enlaces claros y legibles.
+   ========================= */
+
+.recursos {
+   list-style: none;
+}
+
+.recursos a {
+   text-decoration: none;
+   line-height: 1.5rem;
+
+   color: #D45113;
+}
+
+/* =========================
+   BLOQUE HORARIO (ASIDE)
+   - Icono visible.
+   - Horario en negrita.
+   ========================= */
+
+.aside-icono {
+   font-size: 1.25rem;
+}
+
+.horario {
+   font-weight: 700;
+}
+
+
+/* =========================
+   NOTA (OVERFLOW)
+   - Fuerza un alto máximo para que el contenido no quepa entero.
+   - Muestra una barra de desplazamiento cuando el texto se desborde.
+   - Mantén el mismo aspecto de “tarjeta” que el resto de bloques.
+   ========================= */
+
+.nota {
+   max-height: 100px;
+
+   background-color: rgb(207, 207, 207);
+   border: 1px solid #66635B;
+   border-radius: 10px;
+
+   overflow: auto;
+
+   padding: 1rem;
+}
+
+/* =========================
+   ETIQUETA Y TEXTO DE LA NOTA
+   ========================= */
+
+.nota-etiqueta {
+   font-weight: 700;
+
+   margin-bottom: 0.65rem;
+}
+
+.nota p {
+   line-height: 1.25rem;
+   text-align: justify;
+}
+
+.nota p + p {
+   margin-top: 0.5rem;
+}
+
+/* =========================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS (menos de 600px)
+   - En hero, el contenido debe apilarse para que no se aplaste.
+   - En proyectos, las dos columnas deben pasar a una sola.
+   ========================= */
+
+@media (max-width: 600px) {
+   .hero-contenedor {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+   }
+
+   #proyectos .contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+   }
+}

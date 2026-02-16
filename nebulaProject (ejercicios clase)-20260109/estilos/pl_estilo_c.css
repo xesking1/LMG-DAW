@@ -1,0 +1,111 @@
+/* =========================
+   CHULETA: CONCEPTOS QUE SE TRABAJAN
+   - Color y fondo
+   - Modelo de caja (margen, relleno, borde)
+   - Tipografía (tamaño y énfasis)
+   - Colocación en fila/columna y alineaciones
+   - Adaptación a pantallas pequeñas
+   - Mantener la cabecera visible al hacer scroll
+   ========================= */
+
+/* =========================
+   AJUSTES INICIALES
+   - Evita espacios por defecto en los elementos.
+   - Haz que las dimensiones calculadas sean más predecibles al sumar 
+        relleno y borde.
+   ========================= */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+/* CABECERA
+   - Fondo oscuro y línea inferior para separar del contenido.
+   - Debe mantenerse visible en la parte superior al hacer scroll.
+*/
+
+.header {
+   background-color: #B8B3BE;
+   border-bottom: #28262C solid 2px;
+   position: sticky;
+   top: 0;
+
+   z-index: 1000;
+}
+
+/* CONTENEDOR DE CABECERA
+   - Limita el ancho en pantallas grandes y céntralo.
+   - Añade aire interior.
+   - Coloca los elementos en columna:
+       1) Logo arriba
+       2) Menú debajo
+   - Centra todo horizontalmente y deja separación vertical entre bloques.
+*/
+
+@media (min-width: 820px) {
+   .header .contenedor {
+      max-width: 60%;
+   }
+}
+
+.header .contenedor {
+   margin: auto;
+      border: red dashed 2px;
+      padding: 0.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem; /* o justify-content, pero no se ve ningún cambio al la altura mantenerse en la del propio contenido */
+      align-items: center;
+}
+
+.header .contenedor > * {
+      border: purple dashed 2px;
+}
+
+/* LOGO
+   - Debe verse como un único bloque: icono + texto en la misma línea.
+   - Sin subrayado.
+   - Color claro.
+   - El texto debe destacar más que un texto normal.
+   - Ajusta tamaños para que icono y texto se vean equilibrados.
+*/
+
+.header .logo {
+   display: flex;
+   flex-direction: row;
+   text-decoration: none;
+   color: #C9F9FF;
+   font-weight: 700;
+   font-size: 40px;
+}
+
+/* MENÚ
+   - La lista no debe mostrar viñetas ni espacios extra.
+   - Las opciones deben ir en una sola línea, centradas, con separación 
+        regular.
+   - Los enlaces deben tener un área clicable cómoda.
+   - Deja preparado un posible contorno sin que cambie el tamaño del 
+        enlace.
+*/
+
+.header .nav {
+   width: 60%;
+}
+.header .nav ul {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   
+}
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS (menos de 600px)
+   - En pantallas estrechas, el menú debe pasar a columna.
+   - Mantén una separación pequeña entre opciones.
+*/
+
+

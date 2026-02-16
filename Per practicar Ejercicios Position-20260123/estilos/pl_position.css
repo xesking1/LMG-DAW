@@ -1,0 +1,119 @@
+/* =========================================================
+   pl_position.css
+   HOJA DE EJERCICIOS (para completar)
+   Instrucciones:
+   - Escribe tu código JUSTO DEBAJO de cada EJ.
+   - No modifiques el HTML.
+   - Usa solo: position, top/right/bottom/left, z-index (si se pide).
+   ========================================================= */
+
+/* =========================================================
+   EJ1 — position: relative (mover sin perder hueco)
+   Objetivo:
+   - Mueve la Caja A 20px hacia abajo y 30px a la derecha
+   - Debe seguir ocupando su hueco original en la fila
+   Selector:
+   - .ej1-a
+   ========================================================= */
+
+.ej1-a {
+   position: relative;
+   top: 20px;
+   left: 30px;
+}
+
+
+/* =========================================================
+   EJ2 — position: absolute con marco (etiqueta en esquina)
+   Objetivo:
+   - La etiqueta NEW debe quedar en la esquina superior derecha
+   - Separación: 10px del borde superior y 10px del borde derecho
+   - Debe colocarse respecto a la tarjeta (marco)
+   Selectores:
+   - .tarjeta-con-marco  (aquí defines el MARCO)
+   - .ej2-tag           (aquí posicionas la ETIQUETA)
+   ========================================================= */
+
+.tarjeta-con-marco {
+   position: relative;
+}
+
+.ej2-tag {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+
+/* =========================================================
+   EJ3 — absolute sin marco (detectar el error + arreglarlo)
+   Objetivo:
+   - Primero observa que, sin marco, la etiqueta puede colocarse “mal”
+   - Arregla el problema con UNA sola línea en el contenedor
+   - Después, coloca la etiqueta como en EJ2 (top/right a 10px)
+   Selectores:
+   - .tarjeta-sin-marco (UNA línea para arreglar el marco)
+   - .ej3-tag           (mismo planteamiento que EJ2)
+   ========================================================= */
+
+.tarjeta-sin-marco {
+
+}
+
+.ej3-tag {
+
+}
+
+
+/* =========================================================
+   EJ4 — position: fixed (botón flotante)
+   Objetivo:
+   - El botón debe quedar siempre visible
+   - Esquina inferior derecha del viewport
+   - Separación: 16px del borde inferior y 16px del borde derecho
+   Selector:
+   - .boton-flotante
+   ========================================================= */
+
+.boton-flotante {
+   position: fixed;
+   bottom: 16px;
+   right: 16px;
+}
+
+
+/* =========================================================
+   EJ5 — position: sticky (cabecera dentro del contenedor con scroll)
+   Objetivo:
+   - La cabecera "CABECERA" debe quedarse pegada arriba
+   - Debe funcionar al hacer scroll dentro de .scrollbox
+   - Pista: sticky necesita top
+   Selector:
+   - .cabecera-scroll
+   ========================================================= */
+
+.cabecera-scroll {
+   position: sticky;
+   top: 0;
+}
+
+/* =========================================================
+   EJ6 — z-index (quién queda encima)
+   Objetivo:
+   - En el área de solape, la ETIQUETA debe quedar por encima de la CAJA
+   - Puedes necesitar position (según cómo lo plantees) para que z-index aplique
+   Selectores:
+   - .ej6-caja
+   - .ej6-etiqueta
+   ========================================================= */
+
+.ej6-caja {
+   position: absolute;
+   
+}
+
+.ej6-etiqueta {
+   position: absolute;
+   top: 50px;
+   left: 82.5px;
+}

@@ -1,0 +1,113 @@
+/* =========================================================
+   PLANTILLA DE TRABAJO (NO TOCAR EL HTML)
+   Objetivo: aplicar selectores avanzados para conseguir los
+   cambios de estilo indicados en el enunciado.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   TAREAS: SELECTORES DE ATRIBUTO
+   --------------------------------------------------------- */
+
+/* (1) Lista de productos: elementos con data-category="ropa" en azul */
+
+#productos li[data-category="ropa"] {
+   color: blue;
+}
+
+/* (2) Inputs de texto: borde verde solo a <input type="text"> */
+
+input[type="text"] {
+   border: green 1px solid;
+}
+
+/* (3) Enlaces: subrayar enlaces cuyo href empieza por "productos" */
+
+a {
+   text-decoration: none;
+}
+
+a[href^="#productos"] {
+   text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   TAREAS: SELECTORES COMBINADOS
+   --------------------------------------------------------- */
+
+/* (4) Productos: aumentar el tamaño SOLO de los <li> que sean hijos directos
+   de la lista (<ul>) dentro de la sección #productos */
+
+#productos ul > li {
+   font-size: larger;
+}
+
+
+/* (5) Añadir margen superior a los <p> que estén JUSTO después de un <h2> */
+
+h2 + p {
+   margin-top: 2rem;
+}
+
+
+/* (6) En #ofertas: cambiar el fondo de la lista (<ul>) que sea "hermana"
+   de un <p> con clase .extra-info */
+
+#ofertas p.extra-info ~ ul {
+   background-color: aquamarine;
+}
+
+/* ---------------------------------------------------------
+   TAREAS: PSEUDO-CLASES
+   --------------------------------------------------------- */
+
+/* (7) Enlaces de navegación: cambiar color al pasar el ratón */
+
+nav a:hover {
+   color: red;
+}
+
+/* (8) Todas las listas: el segundo <li> en cursiva */
+
+ul li:nth-of-type(2) {
+   font-style: italic;
+}
+
+/* (9) En #productos: el primer elemento de tipo <li> en negrita */
+
+#productos li:first-of-type{
+   font-weight: 900;
+}
+
+
+/* (10) Inputs: poner fondo amarillo claro a TODOS los inputs excepto el de enviar */
+
+input:not([type="submit"]) {
+   background-color: yellow;
+}
+
+/* ---------------------------------------------------------
+   TAREAS: PSEUDO-ELEMENTOS
+   --------------------------------------------------------- */
+
+/* (11) Enlaces de navegación: añadir "→ " antes del texto */
+
+a::before {
+   content: "→ ";
+}
+
+/* (12) En #productos: añadir " ✔" después de cada <li> (verde) */
+
+#productos li::after {
+   content: " ✔";
+   color: green;
+   font-style: normal;
+   font-weight: 900;
+}
+
+/* (13) En #ofertas: la primera línea del primer párrafo debe salir en mayúsculas
+   y con color azul oscuro */
+
+#ofertas p:first-of-type::first-line {
+   text-transform: uppercase;
+   background-color: rgb(168, 205, 255);
+}

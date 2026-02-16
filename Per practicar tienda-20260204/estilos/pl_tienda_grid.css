@@ -1,0 +1,136 @@
+/* =========================================================
+   PRÁCTICA CSS GRID — TIENDA (HTML ORIGINAL)
+   Archivo: tienda_grid_original.css
+   Reglas:
+   - NO modifiques el HTML original.
+   - Trabaja solo con GRID en los bloques "ESCRIBE AQUÍ".
+   - Objetivo: convertir el <main> en un layout 2x2 con áreas
+     y hacer la lista de productos en una rejilla.
+   ========================================================= */
+
+/* Base */
+:root{
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border: rgba(15, 23, 42, 0.12);
+  --accent:#4f46e5;
+  --radius:.9rem;
+  --shadow: 0 10px 20px rgba(2, 6, 23, 0.08);
+  --sp-3: 1rem;
+  --sp-4: 1.25rem;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: system-ui, Arial, sans-serif; background: var(--bg); color: var(--text); }
+header{ padding: var(--sp-4); background:#0b1220; color:#f8fafc; }
+nav ul{ list-style:none; padding:0; margin: .75rem 0 0 0; display:flex; gap:.75rem; flex-wrap:wrap; }
+nav a{ color:#f8fafc; text-decoration:none; }
+main{ padding: var(--sp-4); }
+section{ background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: var(--sp-3); }
+footer{ padding: var(--sp-3) var(--sp-4); text-align:center; color: var(--muted); }
+
+/* =========================================================
+   TAREAS GRID — LAYOUT PRINCIPAL (main)
+   ========================================================= */
+
+/* (1) Convierte <main> en un grid con áreas:
+      "productos ofertas"
+      "productos contacto"
+    - Columnas: 2fr 1fr
+    - Gap: 1rem
+    - Max-width: 1100px centrado */
+main{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+  "productos ofertas " 
+  "productos contacto";
+
+  gap: 1rem;  
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* (2) Asigna cada sección por id a su área */
+#productos{ 
+  grid-area: productos;
+}
+#ofertas{ 
+  grid-area: ofertas;
+}
+#contacto{
+  grid-area: contacto;
+}
+
+/* (3) Responsive (<900px): una columna
+      "productos"
+      "ofertas"
+      "contacto" */
+@media (max-width: 900px){
+  main{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "productos"
+    "ofertas"
+    "contacto";
+  }
+}
+
+/* =========================================================
+   TAREAS GRID — PRODUCTOS
+   ========================================================= */
+
+/* (4) Dentro de #productos, convierte el <ul> en un grid responsive:
+      - auto-fit (o auto-fill)
+      - min 180px, max 1fr
+      - gap 0.75rem
+   Nota: los <li> son las “tarjetas” 
+   
+   -- Mostrar los productos de la siguiente manera:
+        1a columna: data-categoty=ropa
+        2a columna: data-categoty=tecnologia*/
+#productos ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-areas: 
+  "ropa1 tecnologia3"
+  "ropa2 tecnologia4";
+
+  min-width: 180px;
+  max-width: 1fr;
+  gap: 0.75rem;
+
+  padding: 0;
+  margin: var(--sp-3) 0 0 0;
+  list-style: none;
+}
+
+#productos li[data-category="ropa"]:nth-of-type(1) {
+  grid-area: ropa1;
+}
+#productos li[data-category="ropa"]:nth-of-type(2) {
+  grid-area: ropa2;
+}
+
+#productos ul li[data-category="tecnologia"]:nth-of-type(1) {
+  grid-area: tecnologia1;
+}
+#productos ul li[data-category="tecnologia"]:nth-of-type(2z) {
+  grid-area: tecnologia2;
+}
+
+/* (5) BONUS: estilo de “tarjeta” para cada <li> (sin tocar HTML) */
+#productos li{
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: .75rem;
+  padding: .75rem;
+  background: #ffffff;
+}
+
+/* (6) BONUS: que el precio/stock no existe aquí, así que:
+      - Usa :nth-child(odd/even) para alternar un borde de acento */
+#productos li:nth-child(odd){
+  border-left: 6px solid rgba(79, 70, 229, 0.45);
+}

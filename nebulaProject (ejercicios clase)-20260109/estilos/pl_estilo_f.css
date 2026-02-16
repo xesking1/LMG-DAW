@@ -1,0 +1,188 @@
+/* =========================
+   MAIN (ZONA DE CONTENIDO)
+   - Diferencia visualmente el contenido principal de la cabecera.
+   - Mantiene un aspecto sobrio y “clásico”.
+   ========================= */
+
+main {
+   color: #4A4E69;
+   background-color: #F2E9E4;
+}
+
+/* =========================
+   CONTENEDOR DEL MAIN
+   - Reutiliza el mismo ancho máximo que la cabecera.
+   - Centra el contenido y añade aire lateral.
+   ========================= */
+
+@media (min-width: 820px) {
+   main .contenedor {
+      max-width: 60%;
+      margin: auto;
+   }
+}
+
+/* =========================
+   HERO (INICIO)
+   - Separa la primera sección con espacio vertical.
+   - Distribución alternativa: caja a la izquierda y texto a la derecha.
+   ========================= */
+
+#inicio .contenedor {
+   background-color: rgb(230, 243, 255);
+   display: flex;
+   justify-content: space-between;
+} /*SIN ACABAR*/
+
+#inicio .contenedor {
+   border: 2px dotted black;
+}
+
+
+/* =========================
+   TÍTULO Y TEXTO DEL HERO
+   - Título grande y legible.
+   - Texto con buen interlineado y líneas no demasiado largas.
+   ========================= */
+
+h1 {
+   font-size: 50px;
+   font-weight: 700;
+}
+
+.hero-texto .descripcion {
+   max-width: 40ch;
+   line-height: 1.3rem;
+}
+
+/* =========================
+   PALABRA DESTACADA
+   - Resalta una parte del título de forma discreta.
+   ========================= */
+
+h1 .highlight {
+   color: #dc3d3d;
+}
+
+/* =========================
+   ACCIONES (ENLACES CON ASPECTO DE BOTÓN)
+   - Botones en fila con separación.
+   - Si no caben, bajan a la siguiente línea.
+   ========================= */
+
+.hero-texto .acciones {
+   display: flex; 
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.hero-texto .acciones a {
+   border: 1px dotted red;
+}
+
+/* =========================
+   CAJA DEL HERO
+   - Tarjeta sobria: fondo blanco + borde suave.
+   - En esta versión, se coloca “como bloque destacado” a la izquierda.
+   ========================= */
+
+.hero-caja {
+   background-color: white;
+   border: 1px solid #8d7d75;
+   border-radius: 10px;
+}
+
+.hero .contenedor {
+   flex-direction: row-reverse;
+}
+
+/* =========================
+   SECCIONES (SERVICIOS / PROYECTOS)
+   - Separación vertical uniforme para cada bloque del main.
+   ========================= */
+
+main {
+   display: flex; /* se ve que al juntar margin-bottom de una sección con el margin-top, estos se solapan.
+   soluciones: usar padding o usar flex en el padre */
+   flex-direction: column;
+}
+
+#servicios {
+   margin: 10px 0 20px 0; 
+}
+
+#proyectos {
+   margin: 20px 0 10px 0;
+}
+
+/* =========================
+   TÍTULO DE SECCIÓN (ICONO + TEXTO)
+   - Icono y texto alineados en una misma línea.
+   ========================= */
+
+.section-titulo {
+   display: flex;
+   align-items: center;
+}
+
+/* =========================
+   TARJETAS (SERVICIOS)
+   - Fila con salto de línea.
+   - Tarjeta clásica: fondo blanco + borde.
+   ========================= */
+
+#servicios .tarjeta {
+   border: 2px dashed rgb(123, 144, 90);
+   background-color: 8d7d75;
+   border: 2px solid black;
+}
+
+/* =========================
+   ETIQUETA "NEW"
+   - Esquina superior derecha de su tarjeta.
+   ========================= */
+
+#servicios .tarjeta {
+   position: relative;
+}
+
+.nuevo {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+/* =========================
+   PROYECTOS (DOS COLUMNAS) - VARIACIÓN
+   - Distribución alternativa: la columna lateral pasa a la izquierda.
+   - Se mantiene que el contenido principal ocupe más.
+   ========================= */
+
+
+/* =========================
+   POSTS (ARTÍCULOS)
+   - Bloques independientes con borde y padding.
+   ========================= */
+
+
+
+/* =========================
+   NOTA (OVERFLOW)
+   - Fuerza un alto máximo para que el contenido no quepa entero.
+   - Muestra scroll cuando el texto se desborde.
+   ========================= */
+
+
+
+/* =========================
+   TARJETAS DEL ASIDE
+   - Bloques apilados con separación.
+   ========================= */
+
+
+/* =========================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS (menos de 600px)
+   - Hero: apila para que no se aplaste.
+   - Proyectos: una sola columna.
+   ========================= */

@@ -1,0 +1,129 @@
+/* CONCEPTOS A TRABAJAR:
+    - Propiedades del CSS:
+        - Herencia
+        - Cascada
+        - Especificidad
+    - Propiedades trabajadas:
+        - font-family
+        - font-size
+        - font-weight
+        - color
+        - border
+        - background-color
+        - padding
+        - margin
+        - box-sizing
+        - max-width
+        - position / top
+        - list-style
+        - flexbox
+        Extra:
+        - text-decoration
+        - gap
+*/
+
+/* =========================
+   AJUSTES INICIALES
+   - Evita espacios por defecto en los elementos.
+   - Haz que las dimensiones calculadas sean más predecibles al sumar relleno y borde.
+   ========================= */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* =========================
+   CABECERA
+   - Fondo oscuro y línea inferior para separarla del contenido.
+   - Debe mantenerse visible en la parte superior cuando se hace scroll.
+   ========================= */
+
+.header {
+   background-color: #B8B3BE;
+   border-bottom: #28262C solid 2px;
+   position: sticky;
+   top: 0;
+}
+
+
+/* =========================
+   CONTENEDOR DE LA CABECERA
+   - El contenido no debe ocupar todo el ancho en pantallas grandes: limita su anchura.
+   - Debe quedar centrado horizontalmente.
+   - Añade aire interior para que no quede pegado a los bordes.
+   - Coloca el logo a la izquierda y el menú a la derecha en la misma fila.
+   - Alinea verticalmente logo y menú para que queden a la misma altura.
+   ========================= */
+
+
+   .header .contenedor {
+      width: 60%;
+      max-width: 1100px;
+      border: red dashed 3px;
+      margin: auto;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+/* =========================
+   LOGO
+   - Es un enlace sin subrayado.
+   - Icono y texto deben aparecer en la misma línea, con separación entre ambos.
+   - El texto del logo debe destacar más que un texto normal.
+   - Ajusta el tamaño para que el icono y el texto se vean equilibrados.
+   ========================= */
+
+.logo {
+   display: flex;
+   gap: 0.25rem; /* añade un espacio entre elementos creo */
+   font-weight: 700;
+   font-style: normal;
+}
+
+.header a {
+   color: #C9F9FF;
+   text-decoration: none;
+}
+
+/* =========================
+   MENÚ DE NAVEGACIÓN
+   - La lista no debe mostrar viñetas ni espacios extra.
+   - Las opciones deben mostrarse en horizontal con separación regular.
+   - Los enlaces no deben estar subrayados y deben tener un área clicable cómoda.
+   - Deja preparado el estilo para que, si más adelante se marca una opción con un contorno,
+     no cambie el tamaño ni “salte” el contenido.
+   ========================= */
+
+   .nav ul {
+      list-style: none;
+      border: 3px solid red;
+      display: flex;
+   }
+
+   .nav ul li {
+      border: 2px dashed black;
+   }
+
+/* =========================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS (menos de 600px)
+   - En pantallas estrechas, logo y menú deben apilarse.
+   - Las opciones del menú deben colocarse en columna para que se lean mejor.
+   ========================= */
+
+@media (max-width: 600px) {
+   .header .contenedor {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .nav ul {
+      display: flex;
+      flex-direction: column;
+      
+   }
+}

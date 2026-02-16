@@ -1,0 +1,170 @@
+/* CONCEPTOS A TRABAJAR:
+    - Propiedades del CSS:
+        - Herencia
+        - Cascada
+        - Especificidad
+    - Propiedades trabajadas:
+        - font-family
+        - color
+        - border
+        - padding
+        - margin
+        - border-box
+        - max-width
+        Extras:
+        - list-style
+        - text-decoration
+*/
+
+/* Crear una estructura plana para trabajar:
+    - En todo el documento:
+        - sin margen ni padding
+        - el tamaño final de las cajas se calcula teniendo en cuenta el 
+        padding y el borde
+    - En el body:
+        - tipo de letra Arial
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Investigar klk */
+}
+
+body {
+    font-family: Arial;
+}
+
+/* Estilo estructura (elementos con la clase .estructura: header, main, footer):
+    - borde negro sólido de 2px
+    - padding:
+        - sin padding a dcha e izq
+        - arriba y abajo: 12px
+    - margen:
+        - 10px en el contorno de la caja
+*/
+
+.estructura {
+    border: black solid 2px;
+    padding: 12px 0;
+    margin: 10px; /* ns */
+}
+
+/* Estilo para las secciones:
+    - borde azul sólido de 2px
+    - padding:
+        - sin padding a dcha e izq
+        - arriba y abajo: 12px
+    - margen:
+        - 10px en el contorno de la caja
+*/
+
+.section {
+    border: blue solid 2px;
+    padding: 12px 0;
+    margin: 10px;
+}
+
+/* Estilo para los contenedores:
+    - borde rojo sólido de 2px
+    - ancho máximo: 700px;
+    - centrado horizontalmente
+    - padding:
+        - sin padding arriba y abajo
+        - izq y dcha: 16 px
+*/
+
+.contenedor {
+    border: red solid 2px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Estilo contenedor de tarjetas:
+    - borde verde sólido de 2px
+    - padding:
+        - sin padding arriba y abajo
+        - izq y dcha: 12px
+    - margen:
+        - 10px en el contorno de la caja
+*/
+
+.div-tarjetas {
+    border: green solid 2px;
+    padding: 0 12px;
+    margin: 10px;
+}
+
+/* Estilo tarjetas:
+    - borde verde punteado de 2px
+    - padding:
+        - sin padding arriba y abajo
+        - izq y dcha: 12px
+    - margen:
+        - 10px en el contorno de la caja
+*/
+
+.tarjeta {
+    border: green dotted 2px;
+    padding: 0 12px;
+    margin: 10px;
+}
+
+/* Estilo todos los divs dentro de proyectos:
+    - borde magenta sólido de 2px
+    - padding:
+        - sin padding arriba y abajo
+        - izq y dcha: 12px
+    - margen:
+        - 10px en el contorno de la caja
+*/
+
+#proyectos div {
+    border: magenta solid 2px;
+    padding: 0 12px;
+    margin: 10px;
+}
+
+/* Estilo del div de las notas de la sección de proyectos:
+    - borde magenta punteado de 2px
+    - padding:
+        - sin padding arriba y abajo
+        - izq y dcha: 12px
+    - margen:
+        - 10px en el contorno de la caja
+*/
+
+#proyectos .nota {
+    border: magenta dotted 2px;
+    padding: 0 12px;
+    margin: 10px;
+}
+
+/* Estilo contenedor del header:
+    - borde rojo punteado de 2px
+    - tamaño máximo: 900px;
+*/
+
+
+/* Comenta el borde en el contenedor del header así tendremos punteada en
+rojo la caja con la que trabajemos */
+
+/* Estilo para el navegador de la cabecera:
+    - borde rojo punteado de 2px
+    - margen:
+        - sin borde superior e inforior
+        - dcha e izq: 10px
+    - padding:
+        - sin padding arriba y abajo
+        - dcha e izq: 20px
+    - ancho de la caja: 400px ¿Qué pasa si cambiamos a content-box?
+*/
+
+.header .nav {
+    border: 5px dotted red;
+    
+}
+
+/* Eliminar las viñetas de las listas de los navegadores*/
+
