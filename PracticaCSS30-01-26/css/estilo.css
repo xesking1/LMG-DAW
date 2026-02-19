@@ -1,39 +1,293 @@
+/* 0. Variables */
 
 :root {
-    --fondo-principal: #F4F5F7;
-    --superficie: #FFFFFF;
+    --fondo-principal: #EEE0CB;
+    --superficie: #d4c1b1;
     --texto-principal: #1F2933;
-    --texto-secundario: #6B7280;
-    --color-acento: #3B82F6;
+    --texto-secundario: #9e6e67;
+    --color-acento: #280003;
 }
 
-*{
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    !
+
+/* 1. Colores */
+
+body {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
 }
 
-.container {
-    max-width: 70%;
-    margin: 0 auto;
-    border-bottom: 1px solid var(--texto-secundario);
-    padding: 3rem 0;
+.section-lead,
+.hero-subtitle,
+.card-meta {
+    color: var(--texto-secundario);
 }
 
-.card {
-    border: 1px solid black;
+.card,
+.rules,
+.popover {
+    background-color: var(--superficie);
+}
+
+.btn-primary {
+    background-color: var(--color-acento);
+    color: var(--superficie);
+}
+
+.btn:hover {
+    background-color: var(--color-acento);
+    color: var(--superficie);
+    transition: 0.5s;
+
+    transform: scale(0.98);
+}
+
+.btn {
+    /* Para suavizar la transición de vuelta a la normalidad */
+    transition: 0.5s;
+}
+
+[class*="-link"] {
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.4s ease;
+}
+
+[class$="-link"]:hover {
+    border-color: var(--color-acento);
+}
+
+main .container {
+    border-bottom: 1px solid rgba(40, 0, 3, 0.3);
+    padding-bottom: 3rem;
+}
+
+
+/* Extra */
+
+button {
+    background-color: transparent;
+    border-width: 1px;
+}
+
+
+/* 2. Tipografía */
+
+html {
+    font-size: 1rem;
+}
+
+[class*="subtitle"],
+[class*="meta"] {
+    font-size: 0.95rem;
+}
+
+nav {
+    font-size: 0.95rem;
+}
+
+.btn {
+    font-size: 1rem;
+}
+
+[class*="badge"] {
+    font-size: 0.85rem;
+}
+
+h1 {
+    font-size: 2.6rem;
+}
+
+h2.section-title {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.6;
+}
+
+
+/* 3. Espaciado */
+
+section {
+    margin: 3rem 0;
+}
+
+.card,
+.popover,
+.rules-box {
+    padding: 2rem;
+    line-height: 1.75;
+}
+
+[class^="card-"] {
+    padding: 0.7rem;
+}
+
+/* Extra */
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-actions {
+    margin: 1.5rem 0;
+}
+
+#adopcion .container,
+#normas .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rules-title {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.rules-box {
+    padding: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+}
+
+.site-footer {
+    margin: 3rem 0;
+    line-height: 1.75;
+}
+
+.site-footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-links a {
+    margin-left: 0.5rem;
+}
+
+
+/* 4. Bordes y radios */
+
+.btn,
+.rules {
     border-radius: 1rem;
 }
 
-@media (min-width: 768px) {
-    .header-row {
-        background-color: #3B82F6;
+.card {
+    border-radius: 1.25rem;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Extra */
+
+.btn {
+    border: 1px solid var(--color-acento);
+}
+
+/* 5. Caja con contenido largo */
+
+.rules-box {
+    overflow: auto;
+
+    max-height: 180px;
+}
+
+/* 6. Composición responsive (aprox. alrededor de 768px) */
+
+.site-header {
+    border-bottom: 1px solid rgba(40, 0, 3, 0.6);
+}
+
+header .header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "texto visual";
+
+    gap: 2rem;
+}
+
+.hero-text {
+    grid-area: texto;
+}
+
+.hero-media {
+    grid-area: visual;
+}
+
+@media (max-width: 767px) {
+    .hero .container {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "texto"
+            "visual";
     }
 }
 
-.card :hover {
-    background-color: #1F2933;
+/* 7. Interacción */
 
-    transition-duration: 0.8s;
+.header-cta .btn:hover {
+    color: var(--superficie);
+}
+
+/* 8. Grid */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3";
+    gap: 2rem;
+}
+
+.cards .card:nth-of-type(1) {
+    grid-area: tarjeta1;
+}
+
+.cards .card:nth-of-type(2) {
+    grid-area: tarjeta2;
+}
+
+.cards .card:nth-of-type(3) {
+    grid-area: tarjeta3;
+}
+
+@media (max-width: 767px) {
+    .cards {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "tarjeta1"
+            "tarjeta2"
+            "tarjeta3";
+    }
 }

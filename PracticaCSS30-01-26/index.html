@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,11 +8,17 @@
   <meta name="description" content="Adopción y ayuda al refugio. Landing para practicar CSS." />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/estilo.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <!-- =========================
-       ZONA 1: HEADER (flex) + POPOVERR
+       ZONA 1: HEADER (flex) + POPOVER
        ========================= -->
   <header class="site-header">
     <div class="container header-row">
@@ -27,10 +34,7 @@
       </nav>
 
       <div class="header-cta">
-        <button class="btn btn-ghost"
-                popovertarget="ayuda"
-                popovertargetaction="toggle"
-                type="button">
+        <button class="btn btn-ghost" popovertarget="ayuda" popovertargetaction="toggle" type="button">
           Ayuda
         </button>
         <a class="btn btn-primary" href="#contacto">Quiero ayudar</a>
@@ -185,4 +189,5 @@
     </div>
   </footer>
 </body>
+
 </html>
