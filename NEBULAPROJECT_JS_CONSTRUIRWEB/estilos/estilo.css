@@ -1,0 +1,379 @@
+/* styles.css (sin propiedades del anexo) */
+/* HTML base: index.html :contentReference[oaicite:5]{index=5} */
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  color: #eaf7f0;
+  background-color: #0b1511;
+
+  /* REQUERIDAS por enunciado, pero SIN background-image NO se aprecian visualmente */
+  background-position: center;
+  background-size: 40px 40px;
+}
+
+.contenedor{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Header --- */
+.header{
+  background-color: #0f1f18;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: #1e3a2d;
+}
+
+.header .contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo{
+  color: #eaf7f0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+.logo-icono{
+  margin-right: 0.5rem;
+}
+
+.nav ul{
+  margin: 0;
+  padding-left: 1.25rem; /* sin list-style no podemos quitar marcadores */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav li{
+  margin-left: 1.25rem;
+}
+
+.nav-link{
+  color: #bff5d6;
+  font-weight: 600;
+}
+
+/* --- Hero --- */
+.hero{
+  background-color: #0d1b15;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.hero .contenedor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem; /* gap no está en el listado; lo evitamos usando margen abajo */
+}
+
+.hero-texto{
+  width: 60%;
+  flex-grow: 1;
+}
+
+.hero-texto h1{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  text-align: left;
+}
+
+.highlight{
+  font-style: italic;
+  color: #4dffac;
+}
+
+.descripcion{
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #d6f3e5;
+}
+
+.acciones{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn{
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #2a5a44;
+  background-color: #0f2a1f;
+  color: #eaf7f0;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.btn-secundario{
+  background-color: #0b1511;
+  border-color: #2a5a44;
+  color: #bff5d6;
+}
+
+.hero-caja{
+  width: 35%;
+  height: 10rem;           /* para cumplir uso de height */
+  background-color: #0f2419;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #2a5a44;
+  padding: 1rem;
+  text-align: left;
+}
+
+.hero-icono{
+  font-size: 1.5rem;
+}
+
+.hero-titulo{
+  font-weight: 700;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-subtexto{
+  margin: 0;
+  color: #bff5d6;
+}
+
+/* --- Secciones --- */
+.section{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.section-titulo{
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.section-icono{
+  margin-right: 0.5rem;
+}
+
+/* --- Servicios: 3 tarjetas --- */
+.div-tarjetas{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.tarjeta{
+  width: 32%;
+  background-color: #0f1f18;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1e3a2d;
+  padding: 1rem;
+  position: relative; /* para el badge NEW */
+}
+
+.tarjeta h3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.tarjeta p{
+  margin: 0;
+  color: #d6f3e5;
+}
+
+/* Badge NEW (position absolute + top/right) */
+.nuevo{
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: #0b1511;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #4dffac;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* --- Proyectos: 2 columnas --- */
+#proyectos .contenedor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main-col{
+  width: 65%;
+  flex-grow: 1;
+  margin-right: 2rem;
+}
+
+.post{
+  background-color: #0f1f18;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1e3a2d;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.post h3{
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.post p{
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #d6f3e5;
+}
+
+.post-link{
+  color: #4dffac;
+  font-weight: 700;
+}
+
+/* Overflow demo */
+.nota{
+  background-color: #0f2419;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #2a5a44;
+  padding: 1rem;
+  height: 18vh;
+  overflow: auto;
+}
+
+.nota-etiqueta{
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Aside */
+.aside-col{
+  width: 35%;
+}
+
+.aside-tarjeta{
+  background-color: #0f1f18;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1e3a2d;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.aside-titulo{
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.recursos{
+  margin: 0;
+  padding-left: 1.25rem; /* sin list-style: viñetas visibles */
+}
+
+.horario{
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+/* --- Footer --- */
+.footer{
+  background-color: #0f1f18;
+  border-width: 2px 0 0 0;
+  border-style: solid;
+  border-color: #1e3a2d;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.footer .contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer a{
+  color: #bff5d6;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+/* --- Botón flotante --- */
+.vuelta-inicio{
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #0f2a1f;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #2a5a44;
+  text-align: center;
+  font-weight: 800;
+  line-height: 3rem;
+  color: #eaf7f0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 800px){
+  .hero .contenedor{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-texto,
+  .hero-caja{
+    width: 100%;
+  }
+
+  #proyectos .contenedor{
+    flex-direction: column;
+  }
+
+  .main-col{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .aside-col{
+    width: 100%;
+  }
+
+  .div-tarjetas{
+    flex-direction: column;
+  }
+
+  .tarjeta{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
