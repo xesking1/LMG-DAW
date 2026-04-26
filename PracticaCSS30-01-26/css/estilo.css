@@ -120,7 +120,7 @@ section {
 .card,
 .popover,
 .rules-box {
-    padding: 2rem;
+    padding: 5rem 5rem 5rem 0;
     line-height: 1.75;
 }
 

@@ -82,6 +82,7 @@
    gap: 0.25rem; /* añade un espacio entre elementos creo */
    font-weight: 700;
    font-style: normal;
+   text-transform: ;
 }
 
 .header a {

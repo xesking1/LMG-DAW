@@ -57,11 +57,12 @@
    ========================================================= */
 
 .tarjeta-sin-marco {
-
+   position: relative;
 }
 
 .ej3-tag {
-
+   position: absolute;
+   top: 0;
 }
 
 
