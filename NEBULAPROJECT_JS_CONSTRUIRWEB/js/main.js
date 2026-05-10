@@ -198,3 +198,73 @@ function crearTarjetaServicio(servicio) {
 
     tarjeta.append(span, nombre, descripcion);
 }
+
+
+
+
+
+
+
+
+function configurarEventoHero() {
+    const btnPresupuesto = document.querySelector(".btn-primario");
+    const heroCaja = document.getElementById("hero-caja");
+
+    btnPresupuesto.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        while (heroCaja.firstChild) {
+            heroCaja.removeChild(heroCaja.firstChild);
+        }
+
+        const titulo = document.createElement("h2");
+        titulo.textContent = "Solicitud iniciada";
+        
+        const mensaje = document.createElement("p");
+        mensaje.textContent = `Te responderemos pronto en nuestro horario: ${horario.textoPrincipal}`;
+        
+        heroCaja.append(titulo, mensaje);
+    });
+}
+
+
+function buscadorServicios() {
+    const listaServicios = document.getElementById("lista-servicios");
+    const contenedorServicios = document.getElementById("servicios");
+
+    // Crear buscador
+    const divBusqueda = document.createElement("div");
+    const label = document.createElement("label");
+    label.textContent = "Buscador: ";
+    const inputBusqueda = document.createElement("input");
+    inputBusqueda.type = "text";
+    inputBusqueda.placeholder = "Escribe para filtrar...";
+
+    divBusqueda.append(label, inputBusqueda);
+    contenedorServicios.insertBefore(divBusqueda, listaServicios);
+
+    inputBusqueda.addEventListener(keydown, (e) => {
+        const filtro = e.target.value.toLowerCase();
+        const tarjetas = document.querySelectorAll(".tarjeta");
+        let encontrados = 0;
+
+        tarjetas.forEach(t => {
+            const coincide = t.textContent.toLowerCase().includes(filtro);
+            t.style.display = coincide ? "block" : "none";
+            if (coincide) encontrados++;
+        });
+
+        // Mensaje de aviso
+        let aviso = document.getElementById("msg-vacio");
+        if (encontrados === 0) {
+            if (!aviso) {
+                aviso = document.createElement("p");
+                aviso.id = "msg-vacio";
+                aviso.textContent = "No hay servicios que coincidan.";
+                listaServicios.append(aviso);
+            }
+        } else if (aviso) {
+            aviso.remove();
+        }
+    });
+}
