@@ -580,7 +580,13 @@ Salida esperada:
 
 */
 
+function mostrarHorario(horaApertura, horaCierre) {
+    return `Horario de atención: de ${horaApertura} a ${horaCierre}`;
+}
 
+console.log("#16");
+console.log(mostrarHorario("9:00", "14:00"));
+console.log(mostrarHorario("10:00", "18:00"));
 
 
 /*
@@ -612,8 +618,32 @@ Salida esperada:
     Se recomienda Growth Hacking.
     Se recomienda Diseño Web.
     Se recomienda Diseño Web + Desarrollo.
+*/
+
+function clasificaRecomendacion(presupuesto) {
+    let prefijo = "Se recomienda";
+    if (presupuesto < 1000) {
+        return prefijo + servicios[1];
+    } else if (presupuesto < 1800) {
+        return prefijo + servicios[0];
+    } else {
+        return prefijo + servicios[2];
+    }
+}
 
 
+console.log("#17");
+recomendacion = clasificaRecomendacion(900);
+console.log(recomendacion);
+
+recomendacion = clasificaRecomendacion(1500);
+console.log(recomendacion);
+
+recomendacion = clasificaRecomendacion(2200);
+console.log(recomendacion);
+
+
+/*
 Ejercicio 18. Función para contar palabras
 Objetivo: Trabajar con funciones y cadenas para obtener información básica de un texto.
 Tiempo estimado: 12 minutos.
@@ -639,8 +669,18 @@ Salida esperada:
     Número de palabras: 3
     Número de palabras: 4
     Número de palabras: 7
+*/
+
+function contarPalabras(texto) {
+    return texto.split(" ").length;
+}
+
+console.log(`Número de palabras: ${contarPalabras("Transformamos ideas digitales")}`);
+console.log(`Número de palabras: ${contarPalabras("Entrega en 7 días")}`);
+console.log(`Número de palabras: ${contarPalabras("Diseñamos y desarrollamos soluciones web a medida")}`);
 
 
+/*
 Ejercicio 19. Ampliación opcional: valores por defecto
 Objetivo: Utilizar parámetros con valores por defecto en una función.
 Tiempo estimado: 8 minutos.
@@ -662,8 +702,11 @@ Requisitos:
 Salida esperada:
     Precio final: 1050
     Precio final: 800
+*/
 
 
+
+/*
 Ejercicio 20. Función expresión y función flecha
 Objetivo: Reescribir una misma función utilizando distintas sintaxis de JavaScript.
 Tiempo estimado: 10 minutos.
@@ -688,8 +731,11 @@ Requisitos:
 Salida esperada:
     Precio final: 1050
     Precio final: 800
+*/
 
 
+
+/*
 Bloque 6. Parámetros, argumentos y scope
 
 Ejercicio 21. Parámetros y argumentos en una función
@@ -722,8 +768,11 @@ Requisitos:
 Salida esperada:
     Precio final: 1050
     Precio final: 750
+*/
 
 
+
+/*
 Ejercicio 22. Scope global y local
 Objetivo: Comprobar la diferencia entre una variable global y una variable local dentro de una función.
 Tiempo estimado: 10 minutos.
@@ -753,8 +802,11 @@ Requisitos:
 Salida esperada:
     Nombre del estudio: Estudio Nébula
     Estudio Nébula - Entrega rápida disponible
+*/
 
 
+
+/*
 Ejercicio 23. Ampliación opcional: función con parámetro rest
 Objetivo: Utilizar un parámetro rest para recoger varios valores en una misma función.
 Tiempo estimado: 8 minutos.
@@ -777,8 +829,11 @@ Requisitos:
 
 Salida esperada:
     Total contratado: 3650
+*/
 
 
+
+/*
 Bloque 7. Objetos
 
 Ejercicio 24. Crear un objeto literal para un servicio
@@ -805,8 +860,11 @@ Salida esperada:
     Precio: 1200
     Duración: 4
     Incluye soporte: true
+*/
 
 
+
+/*
 Ejercicio 25. Crear un objeto con el constructor Object()
 Objetivo: Crear un objeto utilizando new Object() y asignarle propiedades manualmente.
 Tiempo estimado: 12 minutos.
@@ -831,8 +889,11 @@ Salida esperada:
     Email: lucia@nebula.com
     Presupuesto: 1500
     Quiere express: true
+*/
 
 
+
+/*
 Ejercicio 26. Añadir, modificar y eliminar propiedades
 Objetivo: Manipular propiedades de un objeto añadiendo una nueva, modificando otra y eliminando una existente.
 Tiempo estimado: 12 minutos.
@@ -858,8 +919,11 @@ Requisitos:
 
 Salida esperada:
     { nombre: 'Redesign E-commerce Moda', tipo: 'E-commerce premium', plazoDias: 7 }
+*/
 
 
+
+/*
 Ejercicio 27. Método dentro de un objeto
 Objetivo: Definir un método dentro de un objeto para devolver información formateada.
 Tiempo estimado: 14 minutos.
@@ -883,8 +947,11 @@ Requisitos:
 
 Salida esperada:
     Proyecto Dashboard Financiero SaaS para FinanData. Duración: 6 semanas.
+*/
 
 
+
+/*
 Ejercicio 28. Recorrer un objeto con for...in
 Objetivo: Recorrer las propiedades de un objeto utilizando for...in.
 Tiempo estimado: 12 minutos.
@@ -909,8 +976,11 @@ Salida esperada:
     nombre: Growth Hacking
     precio: 850
     incluyeSeo: true
+*/
 
 
+
+/*
 Ejercicio 29. Personalizar toString() en un objeto creado con constructor
 Objetivo: Modificar el método toString() del prototipo de un constructor para obtener una representación en texto de un objeto.
 Tiempo estimado: 14 minutos.
@@ -945,8 +1015,11 @@ Salida esperada:
     Nombre del proyecto: Growth Hacking
     Precio de proyecto: 850€
     ¿Incluye SEO?: true
+*/
 
 
+
+/*
 Ejercicio 30. Crear un método para mostrar la información de un objeto
 Objetivo: Añadir un método al prototipo de un constructor para mostrar por consola la información completa de un objeto.
 Tiempo estimado: 14 minutos.
@@ -982,8 +1055,11 @@ Salida esperada:
     Nombre del proyecto: Growth Hacking
     Precio de proyecto: 850€
     ¿Incluye SEO?: true
+*/
 
 
+
+/*
 Ejercicio 31. Obtener claves, valores y entradas de un objeto
 Objetivo: Utilizar Object.keys(), Object.values() y Object.entries() para obtener información estructurada de un objeto.
 Tiempo estimado: 14 minutos.
@@ -1010,8 +1086,11 @@ Salida esperada:
     Claves: nombre,email,premium
     Valores: Marta,marta@correo.com,true
     Entradas: nombre,Marta | email,marta@correo.com | premium,true
+*/
 
 
+
+/*
 Bloque 8. DOM
 Estructura base para todo el bloque 8
 Para realizar los ejercicios de este bloque, parte de esta estructura HTML:
@@ -1036,8 +1115,11 @@ Para realizar los ejercicios de este bloque, parte de esta estructura HTML:
 
   <div id="mensaje"></div>
 </section>
+*/
 
 
+
+/*
 Ejercicio 32. Seleccionar elementos del DOM
 Objetivo: Seleccionar elementos del documento utilizando distintos métodos de acceso al DOM.
 Tiempo estimado: 12 minutos.
@@ -1062,8 +1144,11 @@ Requisitos:
 
 Salida esperada:
     Se deben mostrar por consola las referencias a los elementos seleccionados.
+*/
 
 
+
+/*
 Ejercicio 33. Modificar contenido de los elementos
 Objetivo: Modificar el contenido de los elementos del DOM usando textContent, innerHTML y value.
 Tiempo estimado: 12 minutos.
@@ -1087,8 +1172,11 @@ Salida esperada:
     el título debe mostrar Estudio Nébula 2026,
     el div mensaje debe contener Presupuesto enviado correctamente.,
     el input debe tener como valor Marta.
+*/
 
 
+
+/*
 Ejercicio 34. Modificar atributos
 Objetivo: Consultar, añadir, modificar y eliminar atributos de un elemento del DOM.
 Tiempo estimado: 12 minutos.
@@ -1111,8 +1199,11 @@ Requisitos:
 
 Salida esperada:
     Atributo href original: contacto.html
+*/
 
 
+
+/*
 Ejercicio 35. Crear y añadir un elemento nuevo
 Objetivo: Crear un elemento con JavaScript y añadirlo al documento usando createElement() y appendChild().
 Tiempo estimado: 14 minutos.
@@ -1135,8 +1226,11 @@ Salida esperada:
     Growth Hacking
     Desarrollo
     SEO Técnico
+*/
 
 
+
+/*
 Ejercicio 36. Eliminar un elemento del documento
 Objetivo: Eliminar un elemento existente del DOM utilizando remove().
 Tiempo estimado: 10 minutos.
@@ -1154,8 +1248,11 @@ Requisitos:
 Salida esperada:
     Después de ejecutar el script, dentro de #proyectos solo debe quedar:
     Redesign E-commerce Moda
+*/
 
 
+
+/*
 Ejercicio 37. Navegación por el DOM
 Objetivo: Acceder a elementos relacionados dentro del DOM utilizando navegación entre nodos.
 Tiempo estimado: 14 minutos.
@@ -1177,8 +1274,11 @@ Requisitos:
 
 Salida esperada:
     Se deben mostrar por consola las referencias a los elementos obtenidos en cada caso.
+*/
 
 
+
+/*
 Ejercicio 38. Ampliación opcional: crear un aviso y eliminarlo
 Objetivo: Combinar creación y eliminación de elementos del DOM en un mismo ejercicio.
 Tiempo estimado: 12 minutos.

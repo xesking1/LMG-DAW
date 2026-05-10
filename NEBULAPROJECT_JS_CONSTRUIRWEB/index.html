@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio Nébula</title>
+  <link rel="stylesheet" href="estilos/estilo.css">
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor">
+      <a class="logo" href="#inicio" id="logo" aria-label="Ir al inicio"></a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul id="menu-nav"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="contenedor">
+        <div class="hero-texto" id="hero-texto"></div>
+        <div class="hero-caja" id="hero-caja"></div>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="contenedor">
+        <h2 class="section-titulo" id="titulo-servicios">Servicios</h2>
+        <div class="div-tarjetas" id="lista-servicios"></div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <div class="contenedor">
+        <div class="main-col">
+          <h2 class="section-titulo" id="titulo-proyectos">Proyectos</h2>
+          <div id="lista-proyectos"></div>
+          <div class="nota" id="nota-proyectos"></div>
+        </div>
+
+        <aside class="aside-col" aria-label="Columna lateral">
+          <div class="aside-tarjeta">
+            <h3 class="aside-titulo">Recursos</h3>
+            <ul class="recursos" id="lista-recursos"></ul>
+          </div>
+
+          <div class="aside-tarjeta" id="bloque-horario"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="footer">
+    <div class="contenedor">
+      <p class="copyright" id="copyright"></p>
+      <nav class="footer-links" aria-label="Enlaces legales" id="footer-links"></nav>
+    </div>
+  </footer>
+
+  <a class="vuelta-inicio" href="#inicio" aria-label="Volver arriba">↑</a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
