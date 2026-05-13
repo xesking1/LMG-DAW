@@ -138,7 +138,11 @@ const footer = {
 function crearElement(e, tC, cN) {
     const element = document.createElement(e);
     element.textContent = tC;
-    element.className = cN;
+    if (cN) {
+        element.className = cN;
+    } else {
+        element.className = ""; // Per evitar undefined
+    }
     return element;
 }
 
@@ -151,7 +155,7 @@ function crearEnllac(tC, h, cN) {
 function crearLogo() {
     let logo = document.getElementById("logo");
 
-    const titol = crearElement("span", dadesGenerals.nom, "logo");
+    const titol = crearElement("span", dadesGenerals.nom);
 
     logo.appendChild(titol);
 }
@@ -160,8 +164,7 @@ function crearNav() {
     let menuNav = document.getElementById("menu-nav");
 
     enllacosNav.forEach(e => {
-        const a = crearEnllac(e.text, e.href);
-        a.className = "nav-link";
+        const a = crearEnllac(e.text, e.href, "nav-link");
 
         const li = crearElement("li");
         li.appendChild(a);
@@ -270,9 +273,11 @@ function crearRecursos() {
     let contenidorRecursos = document.getElementById("llista-recursos");
 
     recursos.forEach(r => {
+        const li = crearElement("li");
         const recurs = crearEnllac(r.text, r.href);
 
-        contenidorRecursos.appendChild(recurs);
+        li.appendChild(recurs);
+        contenidorRecursos.appendChild(li);
     });
 }
 
@@ -291,19 +296,18 @@ function crearHorari() {
 }
 
 function crearFooter() {
-    let contenidorFooter = document.querySelector(".footer");
+    let copyright = document.getElementById("copyright");
+    copyright.textContent = footer.copyright;
 
-    const copyright = crearElement("span", footer.copyright);
-
-    const enllacosLegals = crearElement("span", "", "footer-links");
+    const enllacosLegals = document.getElementById("footer-links");
     footer.enllacosLegals.forEach(e => {
         const enllac = crearEnllac(e.text, e.href);
 
         enllacosLegals.appendChild(enllac);
     });
-    
-    contenidorFooter.append(copyright, enllacosLegals);
 }
+
+
 
 crearLogo();
 crearNav();
