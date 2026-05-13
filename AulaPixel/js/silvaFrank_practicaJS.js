@@ -150,18 +150,24 @@ function crearEnllac(tC, h, cN) {
 
 function crearLogo() {
     let logo = document.getElementById("logo");
+
     const titol = crearElement("span", dadesGenerals.nom, "logo");
+
     logo.appendChild(titol);
 }
 
 function crearNav() {
     let menuNav = document.getElementById("menu-nav");
+
     enllacosNav.forEach(e => {
         const a = crearEnllac(e.text, e.href);
         a.className = "nav-link";
-        menuNav.appendChild(a);
+
+        const li = crearElement("li");
+        li.appendChild(a);
+        
+        menuNav.appendChild(li);
     });
-    menuNav.className = "menu-nav";
 }
 
 function crearHero() {
@@ -308,7 +314,7 @@ crearProjectes();
 crearRecursos();
 crearHorari();
 crearFooter();
-crearNotaProjectes();
+
 
 // Tasca 2
 function crearNotaProjectes() {
@@ -319,63 +325,12 @@ function crearNotaProjectes() {
 
     notaProjectes.append(titol, text);
 }
-
+crearNotaProjectes();
 
 // S'ha afegit el addEventListener dins la funció de creació de tallers (línia 230)
 
 
 // Tasca 3
-function crearControlsProjectes() {
-    // No sé com es fa, hauria de quedar a l'esquerra
-    let controlsProjectes = document.getElementById("controls-projectes");
-    controlsProjectes.classList.add("camp-control");
-
-    const contenidorControls = crearElement("span", "", "camp-control");
-    const selectProjectes = document.createElement("select");
-    selectProjectes.id = "selectProjectes";
-    selectProjectes.name = "selectProjectes";
-    
-    const labelProjectes = crearLabel(selectProjectes.id, "Filtra els projectes per categoria");
-
-    const opcions = [
-        { text: "Tots els projectes", value: "Tots" },
-        { text: "Web", value: "Web" },
-        { text: "Contingut", value: "Contingut" }
-    ];
-
-    opcions.forEach(o => {
-        const opcio = crearOpcio(o.value, o.text);
-        
-        if (o.value == "Tots") {
-            opcio.defaultSelected = true;
-        }
-
-        selectProjectes.appendChild(opcio);
-    });
-
-    controlsProjectes.append(labelProjectes, selectProjectes);
-
-    controlsProjectes.addEventListener("change", (e) => {
-        filtrarProjectes(e.target.value);
-    });
-}
-crearControlsProjectes();
-
-function filtrarProjectes(categoria) {
-    const projectes = document.querySelectorAll(".projecte");
-
-    projectes.forEach(p => {
-        const categoriaProjecte = p.querySelector("p").textContent;
-        if (categoria === "Tots" || categoriaProjecte === categoria) {
-            p.classList.remove("amagat");
-        } else {
-            p.classList.add("amagat");
-        }
-    });
-}
-
-
-// Tasca 4
 function crearInput(t, i, n) {
     const input = document.createElement("input");
     input.type = t;
@@ -398,6 +353,58 @@ function crearOpcio(v, tC) {
     return option;
 }
 
+function crearControlsProjectes() {
+    let controlsProjectes = document.getElementById("controls-projectes");
+    
+    const formProjectes = crearElement("form", "", "camp-control")
+
+    const selectProjectes = document.createElement("select");
+    selectProjectes.id = "selectProjectes";
+    selectProjectes.name = "selectProjectes";
+    
+    const labelProjectes = crearLabel(selectProjectes, "Filtra els projectes per categoria");
+
+    const opcions = [
+        { text: "Tots els projectes", value: "Tots" },
+        { text: "Web", value: "Web" },
+        { text: "Contingut", value: "Contingut" }
+    ];
+
+    opcions.forEach(o => {
+        const opcio = crearOpcio(o.value, o.text);
+        
+        if (o.value == "Tots") {
+            opcio.defaultSelected = true;
+        }
+
+        selectProjectes.appendChild(opcio);
+    });
+
+
+    formProjectes.append(labelProjectes, selectProjectes);
+    controlsProjectes.appendChild(formProjectes);
+
+    selectProjectes.addEventListener("change", (e) => {
+        filtrarProjectes(e.target.value);
+    });
+}
+crearControlsProjectes();
+
+function filtrarProjectes(categoria) {
+    const projectes = document.querySelectorAll(".projecte");
+
+    projectes.forEach(p => {
+        const categoriaProjecte = p.querySelector("p").textContent;
+        if (categoria === "Tots" || categoriaProjecte === categoria) {
+            p.classList.remove("amagat");
+        } else {
+            p.classList.add("amagat");
+        }
+    });
+}
+
+
+// Tasca 4
 function crearFormulari() {
     let contenidorFormulari = document.getElementById("zona-formulari");
 
@@ -406,7 +413,7 @@ function crearFormulari() {
     formulari.method = "post";
     formulari.className = "formulari";
 
-    const inputNom = crearInput("text", "nom", "nom", true);
+    const inputNom = crearInput("text", "nom", "nom");
     const labelNom = crearLabel(inputNom, "Nom");
 
     const selectTaller = document.createElement("select");
@@ -416,6 +423,7 @@ function crearFormulari() {
 
     const primeraOpcio = crearOpcio("", "Selecciona un taller");
     primeraOpcio.hidden = true;
+    primeraOpcio.disabled = true;
     primeraOpcio.defaultSelected = true;
     selectTaller.appendChild(primeraOpcio);
 
